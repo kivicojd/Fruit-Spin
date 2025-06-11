@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#000000">
+    <meta name="description" content="Gambling slot machine">
+    <title>Herní automat</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+    <div class="frame">
+        <img src="sloty.png" alt="Logo" class="logo">
+        <div class="container">
+            <div class="machine-container">
+                <div id="counts">
+                    <p id="coinCount">Coins: 50</p>
+                    <p id="spinCount">Spins: 0</p>
+                </div>
+
+                <div id="machine">
+                    <div class="slot-container">
+                        <img src="default.png" class="slot" id="slot1" alt="Slot 1">
+                        <span class="slot-number" id="num1">?</span>
+                    </div>
+                    <div class="slot-container">
+                        <img src="default.png" class="slot" id="slot2" alt="Slot 2">
+                        <span class="slot-number" id="num2">?</span>
+                    </div>
+                    <div class="slot-container">
+                        <img src="default.png" class="slot" id="slot3" alt="Slot 3">
+                        <span class="slot-number" id="num3">?</span>
+                    </div>
+                </div>
+
+                <div class="result" id="result"></div>
+
+                <div id="results" class="bet-button-container">
+                    <button id="decreaseBet">-</button>
+                    <p id="price">price: <span id="betAmount">1</span></p>
+                    <button id="increaseBet">+</button>
+                </div>
+            </div>
+
+<div id="gameOverModal" class="modal" style="display:none;">
+  <div class="modal-content">
+    <p>💀 Game Over! Chceš restartovat hru?</p>
+    <button id="restartBtn">Restartovat</button>
+    <button id="closeModalBtn">Zavřít</button>
+  </div>
+</div>
+
+            <img src="pakahore.png" alt="Spin" class="spin-button" id="spinBtn" onclick="spin()">
+        </div>
+    </div>
+ <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js')
+        .then(function (registration) {
+          console.log('Service Worker registered with scope:', registration.scope);
+        })
+        .catch(function (error) {
+          console.log('Service Worker registration failed:', error);
+        });
+    }
+  </script>
+    <script src="main.js"></script>
+</body>
+</html>

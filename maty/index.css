@@ -1,0 +1,204 @@
+body {
+  background-color: rgb(82, 4, 4); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* GAME SCREEN */
+.container {
+  display: flex;
+  flex-direction: row;  /* Now elements will be arranged in a row */
+  align-items: center;
+  gap: 30px;  /* Space between machine and spin button */
+}
+
+.machine-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  min-height: 150px;
+}
+
+#counts {
+  display: flex;
+  gap: 20px; 
+}
+
+#coinCount, #spinCount{
+  font-size: 22px;
+  font-weight: bold;
+  color: rgb(255, 255, 255);
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 8px 15px;
+  border-radius: 8px;
+  text-align: center;
+  line-height: 40px; 
+  height: 40px; 
+}
+
+#machine {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.slot-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slot {
+  width: 70px;
+  height: 100px;
+  object-fit: contain;
+  border-radius: 12px;
+  background: linear-gradient(to bottom, #ffffff, #dddddd);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  border: 2px solid #999;
+  transition: transform 1s ease-in-out;
+}
+
+.slot-number {
+  position: absolute;
+  font-size: 0px;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+@keyframes spin {
+  0% { transform: scale(1.1); }
+  50% { transform: scale(1); }
+  100% { transform: scale(1.1); }
+}
+
+.slot.animate {
+  animation: spin 0.2s infinite;
+}
+
+.spin-button {
+  width: 50px;
+  height: 250px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.spin-button:active {
+  transform: scale(0.95);
+}
+
+.result {
+  text-align: center;
+  font-size: 26px;
+  font-weight: bold;
+  color: #ffffff;
+  margin-top: 15px;
+  min-height: 35px;
+}
+
+#results {
+  display: flex;
+  justify-content: center;
+  gap: 20px; 
+  margin-top: 15px;
+}
+
+/* FRAME CONTAINER */
+.frame {
+  border: 5px solid #ffffff;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;  /* Ensure content is stacked vertically */
+  align-items: center;
+  justify-content: flex-start; /* Align items to the start of the container */
+}
+
+/* LOGO */
+.logo {
+  width: 250px; /* Adjust size as needed */
+  height: auto;
+  margin-bottom: 20px; /* Ensure space below the logo */
+}
+.bet-button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+.bet-button-container button {
+  font-size: 20px;
+  padding: 10px;
+  margin: 0 10px;
+}
+.betAmountDisplay {
+  font-size: 24px;
+  font-weight: bold;
+}
+.bet-button-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.bet-button-container button {
+  font-size: 24px;
+  font-weight: bold;
+  background-color: #333;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.bet-button-container button:hover {
+  background-color: #555;
+}
+
+#price {
+  font-size: 22px;
+  font-weight: bold;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 8px 20px;
+  border-radius: 8px;
+  text-align: center;
+}
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.modal-content {
+  background: #222;
+  padding: 20px 30px;
+  border-radius: 10px;
+  color: white;
+  text-align: center;
+  box-shadow: 0 0 10px #000;
+}
+
+.modal-content button {
+  margin: 10px;
+  padding: 8px 16px;
+  font-size: 16px;
+  cursor: pointer;
+}
