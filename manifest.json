@@ -1,7 +1,7 @@
 {
   "name": "Fruit Spin",
   "short_name": "ApFruitpka",
-  "start_url": "index.html",
+  "start_url": "/Fruit-Spin/index.html",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#000000",
